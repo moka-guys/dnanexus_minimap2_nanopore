@@ -9,8 +9,8 @@ main() {
     dx-download-all-inputs 
 
     # Create output directories
-    mkdir -p $HOME/out/bam/output/
-    mkdir -p $HOME/out/bai/output/
+    mkdir -p $HOME/out/bam/bam/
+    mkdir -p $HOME/out/bai/bam/
 
     # Extract minimap2
     tar -jxvf minimap2-2.8_x64-linux.tar.bz2
@@ -23,8 +23,8 @@ main() {
     samtools sort - -o /data/${fastq_prefix}.bam && samtools index /data/${fastq_prefix}.bam"
 
     # Move bam and bam index to output directories
-    sudo mv $HOME/${fastq_prefix}.bam $HOME/out/bam/output/
-    sudo mv $HOME/${fastq_prefix}.bam.bai $HOME/out/bai/output/
+    sudo mv $HOME/${fastq_prefix}.bam $HOME/out/bam/bam/
+    sudo mv $HOME/${fastq_prefix}.bam.bai $HOME/out/bai/bam/
 
     # Upload output
     dx-upload-all-outputs
