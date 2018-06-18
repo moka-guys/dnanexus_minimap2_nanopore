@@ -69,9 +69,6 @@
     "release": "14.04"
   },
   "access": {
-    "allProjects": "VIEW",
-    "network": [
-      "*"
-    ]    
+    "allProjects": "VIEW"   
   }
 }
