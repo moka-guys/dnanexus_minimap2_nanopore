@@ -52,8 +52,8 @@
   "runSpec": {
     "assetDepends": [
       {
-        "project": "project-FGYjK700p9FZ41XG41Vbx9G6",
-        "folder": "/",
+        "project": "project-ByfFPz00jy1fk6PjpZ95F27J",
+        "folder": "/Apps/Docker",
         "name": "quay.io/biocontainers/samtools:1.5--2",
         "version": "0.0.1"
       }
