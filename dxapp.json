@@ -3,7 +3,9 @@
   "title": "minimap2_nanopore_v1.0",
   "summary": "v1.0 Aligns fastq files to reference using settings for Oxford Nanopore reads and outputs sorted bam and index",
   "dxapi": "1.0.0",
-  "version": "1.0",
+  "properties": {
+    "github release": "v1.0"
+  },
   "inputSpec": [
     {
       "name": "fastq",
