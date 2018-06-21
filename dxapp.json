@@ -64,6 +64,13 @@
     ],
     "interpreter": "bash",
     "file": "src/minimap2.sh",
+    "systemRequirementsByRegion": {
+      "aws:us-east-1": {
+        "main": {
+          "instanceType": "mem2_ssd1_x4"
+        }
+      }
+    },
     "systemRequirements": {
       "*": {
         "instanceType": "mem2_ssd1_x4"
