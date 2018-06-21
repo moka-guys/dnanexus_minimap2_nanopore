@@ -1,0 +1,85 @@
+{
+  "name": "minimap2_nanopore_v1.0",
+  "title": "minimap2_nanopore_v1.0",
+  "summary": "v1.0 Aligns fastq files to reference using settings for Oxford Nanopore reads and outputs sorted bam and index",
+  "dxapi": "1.0.0",
+  "properties": {
+    "github release": "v1.0"
+  },
+  "inputSpec": [
+    {
+      "name": "fastq",
+      "label": "FASTQ",
+      "class": "file",
+      "optional": false,
+      "patterns": [
+        "*.fastq",
+        "*.fq",
+        "*.fastq.gz",
+        "*.fq.gz"
+      ],
+      "help": "FASTQ file"
+    },
+    {
+      "name": "reference_genome",
+      "label": "Reference genome",
+      "class": "file",
+      "optional": false,
+      "patterns": [
+        "*.fasta",
+        "*.fa",
+        "*.fa.gz"
+      ],
+      "help": "Reference genome to align against"
+    }
+  ],
+  "outputSpec": [
+    {
+      "name": "bam",
+      "label": "BAM",
+      "class": "file",
+      "patterns": [
+        "*.bam"
+      ],
+      "help": "Sorted BAM file"
+    },
+    {
+      "name": "bai",
+      "label": "BAM index",
+      "class": "file",
+      "patterns": [
+        "*.bam.bai"
+      ],
+      "help": "Sorted BAM index file"
+    }
+  ],
+  "runSpec": {
+    "assetDepends": [
+      {
+        "project": "project-ByfFPz00jy1fk6PjpZ95F27J",
+        "folder": "/Apps/Docker",
+        "name": "quay.io/biocontainers/samtools:1.5--2",
+        "version": "0.0.1"
+      }
+    ],
+    "interpreter": "bash",
+    "file": "src/minimap2.sh",
+    "systemRequirementsByRegion": {
+      "aws:us-east-1": {
+        "main": {
+          "instanceType": "mem2_ssd1_x4"
+        }
+      }
+    },
+    "systemRequirements": {
+      "*": {
+        "instanceType": "mem2_ssd1_x4"
+      }
+    },
+    "distribution": "Ubuntu",
+    "release": "14.04"
+  },
+  "access": {
+    "allProjects": "VIEW"   
+  }
+}
