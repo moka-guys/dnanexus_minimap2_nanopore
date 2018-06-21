@@ -14,7 +14,9 @@
       "optional": false,
       "patterns": [
         "*.fastq",
-        "*.fq"
+        "*.fq",
+        "*.fastq.gz",
+        "*.fq.gz"
       ],
       "help": "FASTQ file"
     },
