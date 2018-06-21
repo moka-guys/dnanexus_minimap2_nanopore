@@ -19,6 +19,11 @@ main() {
     ./minimap2-2.8_x64-linux/minimap2 -ax map-ont -t 4 $reference_genome_path $fastq_path > ${fastq_prefix}.sam
 
     # sort and index with samtools
+    # -v ~:/data mounts the local home directory to /data/ in the docker container allowing access to files.
+    # /bin/bash -c runs the subsequent commands in the docker container
+    # samtools view -b -S reads the SAM and pipes BAM output into samtools sort
+    # samtools sort - -o reads input from samtools view and outputs a sorted bam to specified output file
+    # samtools index geneates an index file (.bai) for the bam
     dx-docker run -v ~:/data quay.io/biocontainers/samtools:1.5--2 /bin/bash -c "samtools view -b -S /data/${fastq_prefix}.sam | \
     samtools sort - -o /data/${fastq_prefix}.bam && samtools index /data/${fastq_prefix}.bam"
 
