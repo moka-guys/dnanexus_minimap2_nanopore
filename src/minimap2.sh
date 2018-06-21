@@ -15,7 +15,7 @@ main() {
     # Extract minimap2
     tar -jxvf minimap2-2.8_x64-linux.tar.bz2
 
-    # Run minimap2 using Oxford Nanopore settings
+    # Run minimap2. -a specifies output should be SAM format. -x uses preset setting for Oxford Nanopore. -t sets number of threads.
     ./minimap2-2.8_x64-linux/minimap2 -ax map-ont -t 4 $reference_genome_path $fastq_path > ${fastq_prefix}.sam
 
     # sort and index with samtools
